@@ -1,0 +1,27 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+*.import
+export.cfg
+export_presets.cfg
+
+# Mono/C#
+.mono/
+data_*/
+mono_crash.*.json
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Build outputs
+builds/
+
+# Godot UID files (auto-generated)
+*.uid
