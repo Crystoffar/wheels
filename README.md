@@ -2,15 +2,11 @@
 
 A recreation of the slot-machine combat mini-game from *Sea of Stars*, built in Godot 4.
 
----
-
 ## Tech Stack
 
 - **Engine:** Godot 4
 - **Language:** GDScript
 - **Platforms:** Windows / Mac / Linux + Web (HTML5)
-
----
 
 ## Getting Started
 
@@ -19,13 +15,9 @@ A recreation of the slot-machine combat mini-game from *Sea of Stars*, built in 
 3. Open Godot → **Import** → select the `project.godot` file
 4. Hit **Play** (F5)
 
----
-
 ## Assets
 
 Placeholder art sourced from [Kenney.nl](https://kenney.nl) and [OpenGameArt.org](https://opengameart.org). Final art TBD.
-
----
 
 ## License
 
