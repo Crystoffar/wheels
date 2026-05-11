@@ -1,11 +1,21 @@
 [gd_scene format=3 uid="uid://ddc0mt27sp1ds"]
 
-[ext_resource type="Script" uid="uid://cxxm0lniqdtp5" path="res://scripts/reel.gd" id="1_ws2lj"]
+[ext_resource type="Script" uid="uid://dsfgatcb8t5wt" path="res://scripts/reel2.gd" id="1_ws2lj"]
 
 [node name="Reel" type="Node2D" unique_id=286959272]
 script = ExtResource("1_ws2lj")
 
 [node name="SymbolContainer" type="Node2D" parent="." unique_id=1849955681]
+
+[node name="Buffer" type="Node2D" parent="SymbolContainer" unique_id=1454204620]
+position = Vector2(0, -16)
+
+[node name="bg" type="ColorRect" parent="SymbolContainer/Buffer" unique_id=1693021064]
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="icon" type="Sprite2D" parent="SymbolContainer/Buffer" unique_id=1848566502]
+offset = Vector2(8, 8)
 
 [node name="TopSlot" type="Node2D" parent="SymbolContainer" unique_id=1966920409]
 
@@ -14,6 +24,7 @@ offset_right = 16.0
 offset_bottom = 16.0
 
 [node name="icon" type="Sprite2D" parent="SymbolContainer/TopSlot" unique_id=1109680424]
+offset = Vector2(8, 8)
 
 [node name="MidSlot" type="Node2D" parent="SymbolContainer" unique_id=1796422788]
 position = Vector2(0, 16)
@@ -23,6 +34,7 @@ offset_right = 16.0
 offset_bottom = 16.0
 
 [node name="icon" type="Sprite2D" parent="SymbolContainer/MidSlot" unique_id=791904474]
+offset = Vector2(8, 8)
 
 [node name="BotSlot" type="Node2D" parent="SymbolContainer" unique_id=304385835]
 position = Vector2(0, 32)
@@ -32,3 +44,4 @@ offset_right = 16.0
 offset_bottom = 16.0
 
 [node name="icon" type="Sprite2D" parent="SymbolContainer/BotSlot" unique_id=1101606115]
+offset = Vector2(8, 8)
