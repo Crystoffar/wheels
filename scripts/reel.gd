@@ -1,5 +1,7 @@
 extends Node2D
 
+signal reel_stopped
+
 # Wheel resource assigned in the inspector
 @export var wheel: Wheel
 
@@ -21,15 +23,18 @@ const VISIBLE_SLOTS: int = 3
 
 ## Reel state
 # is_spinning Boolean to track if reel is currently spinning
-# scroll_speed Float that determines speed that reel scrolls at NOTE: must be multiple of 40
+# scroll_speed Float that determines speed that reel scrolls at 
+# NOTE: scroll_speed must be multiple of 40 for clean snapping
 # spin_duration seconds that roll spins for  
 # current_index Int that tracks current position in Wheel resource
 # tween Tween for deceleration of spinning
+# result stores the Symbol resource of the current middle slot
 var is_spinning: bool = false
 var scroll_speed: float = 200.0 
 var spin_duration: float = 2.0
 var current_index: int = 0
 var tween: Tween
+var result: Symbol = null
 
 func _ready() -> void:
 	# sets initial symbols for slots
@@ -44,6 +49,9 @@ func _process(delta: float) -> void:
 		symbol_container.position.y += scroll_speed * delta
 		# wraps slot if moving out of bounds
 		_wrap_slots()
+
+func get_result() -> Symbol:
+	return result
 
 func _decelerate() -> void:
 	""" _decelerate: stops _process from moving container, animates smoothly deceleration of reel 
@@ -94,8 +102,13 @@ func _stop() -> void:
 	# resets container to initial position
 	symbol_container.position.y = 0.0
 	
+	""" DEBUG for printing slot icons
 	for slot in slots:
-		print("DEBUG: ", slot.name, " showing ", slot.get_node("icon").texture.resource_path)
+			print("DEBUG: ", slot.name, " showing ", slot.get_node("icon").texture.resource_path)
+	"""
+	
+	# emits reel_stopped signal
+	reel_stopped.emit()
 
 func _wrap_slots() -> void:
 	""" _wrap_slots: when slot moves out of bounds, sets position to top and 
@@ -130,3 +143,7 @@ func _update_slot(slot: Node2D, index: int) -> void:
 		slot.get_node("bg").color = Color.BLUE
 	else:
 		slot.get_node("bg").color = Color.SADDLE_BROWN
+	
+	# if updating the middle slot, sets result to symbol
+	if slot == slots[3]:
+		result = symbol
