@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cxkhcqc1v1gts"]
+
+[ext_resource type="Script" uid="uid://dod7yn4eofpor" path="res://scripts/slot_machine.gd" id="1_8noel"]
+[ext_resource type="PackedScene" uid="uid://ddc0mt27sp1ds" path="res://scenes/components/reel.tscn" id="1_j7wgu"]
+
+[node name="SlotMachine" type="Node2D" unique_id=1047571610]
+script = ExtResource("1_8noel")
+
+[node name="Reel1" parent="." unique_id=286959272 instance=ExtResource("1_j7wgu")]
+
+[node name="Reel2" parent="." unique_id=893733429 instance=ExtResource("1_j7wgu")]
+position = Vector2(16, 0)
+
+[node name="Reel3" parent="." unique_id=1978514449 instance=ExtResource("1_j7wgu")]
+position = Vector2(32, 0)
+
+[node name="Reel4" parent="." unique_id=775341804 instance=ExtResource("1_j7wgu")]
+position = Vector2(48, 0)
+
+[node name="Reel5" parent="." unique_id=323735769 instance=ExtResource("1_j7wgu")]
+position = Vector2(64, 0)
