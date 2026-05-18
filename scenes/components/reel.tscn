@@ -1,20 +1,30 @@
 [gd_scene format=3 uid="uid://ddc0mt27sp1ds"]
 
-[ext_resource type="Script" uid="uid://dsfgatcb8t5wt" path="res://scripts/reel2.gd" id="1_ws2lj"]
+[ext_resource type="Script" uid="uid://dsfgatcb8t5wt" path="res://scripts/reel.gd" id="1_ws2lj"]
 
 [node name="Reel" type="Node2D" unique_id=286959272]
 script = ExtResource("1_ws2lj")
 
 [node name="SymbolContainer" type="Node2D" parent="." unique_id=1849955681]
 
-[node name="Buffer" type="Node2D" parent="SymbolContainer" unique_id=1454204620]
-position = Vector2(0, -16)
+[node name="Buffer1" type="Node2D" parent="SymbolContainer" unique_id=1454204620]
+position = Vector2(0, -32)
 
-[node name="bg" type="ColorRect" parent="SymbolContainer/Buffer" unique_id=1693021064]
+[node name="bg" type="ColorRect" parent="SymbolContainer/Buffer1" unique_id=1693021064]
 offset_right = 16.0
 offset_bottom = 16.0
 
-[node name="icon" type="Sprite2D" parent="SymbolContainer/Buffer" unique_id=1848566502]
+[node name="icon" type="Sprite2D" parent="SymbolContainer/Buffer1" unique_id=1848566502]
+offset = Vector2(8, 8)
+
+[node name="Buffer2" type="Node2D" parent="SymbolContainer" unique_id=829610859]
+position = Vector2(0, -16)
+
+[node name="bg" type="ColorRect" parent="SymbolContainer/Buffer2" unique_id=451634836]
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="icon" type="Sprite2D" parent="SymbolContainer/Buffer2" unique_id=1117034591]
 offset = Vector2(8, 8)
 
 [node name="TopSlot" type="Node2D" parent="SymbolContainer" unique_id=1966920409]
@@ -45,3 +55,18 @@ offset_bottom = 16.0
 
 [node name="icon" type="Sprite2D" parent="SymbolContainer/BotSlot" unique_id=1101606115]
 offset = Vector2(8, 8)
+
+[node name="Border" type="Node2D" parent="." unique_id=2000162555]
+
+[node name="UpperBorder" type="ColorRect" parent="Border" unique_id=1619788445]
+z_index = 1
+offset_top = 48.0
+offset_right = 16.0
+offset_bottom = 64.0
+color = Color(0, 0, 0, 1)
+
+[node name="BottomBorder" type="ColorRect" parent="Border" unique_id=1945476185]
+z_index = 1
+offset_top = -16.0
+offset_right = 16.0
+color = Color(0, 0, 0, 1)
